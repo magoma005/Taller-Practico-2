@@ -3,8 +3,7 @@ public class Consulta {
     private String fecha;
     private Diagnostico diagnostico;
 
-    //Constructor
-
+    // Constructor con parámetros
     public Consulta(String codigo, String fecha, Diagnostico diagnostico) {
         this.codigo = codigo;
         this.fecha = fecha;
@@ -35,7 +34,20 @@ public class Consulta {
     public void setDiagnostico(Diagnostico diagnostico) {
         this.diagnostico = diagnostico;
     }
-    // toString para imprimir fácilmente
+
+    // Método mostrarConsulta()
+    public void mostrarConsulta() {
+        System.out.println("Consulta #" + codigo);
+        System.out.println("Fecha: " + fecha);
+        System.out.println("Diagnóstico: " + diagnostico.getDescripcion());
+        System.out.println("Tratamiento: " + diagnostico.getTratamiento());
+
+        if (diagnostico.esTratamientoLargo()) {
+            System.out.println("El tratamiento es extenso, se requiere seguimiento adicional.");
+        }
+    }
+
+    // toString
     @Override
     public String toString() {
         return "Consulta{" +

@@ -2,15 +2,13 @@ public class Diagnostico {
     private String descripcion;
     private String tratamiento;
 
-    //Constructor
-
+    // Constructor con parámetros
     public Diagnostico(String descripcion, String tratamiento) {
         this.descripcion = descripcion;
         this.tratamiento = tratamiento;
     }
 
-    //Getters y Setters
-
+    // Getters y Setters
     public String getDescripcion() {
         return descripcion;
     }
@@ -27,7 +25,12 @@ public class Diagnostico {
         this.tratamiento = tratamiento;
     }
 
-    //toString para imprimir mas facil
+    // Método esTratamientoLargo()
+    public boolean esTratamientoLargo() {
+        return tratamiento.length() > 30;
+    }
+
+    // toString
     @Override
     public String toString() {
         return "Diagnostico{" +
@@ -36,3 +39,4 @@ public class Diagnostico {
                 '}';
     }
 }
+
