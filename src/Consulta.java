@@ -46,14 +46,4 @@ public class Consulta {
             System.out.println("El tratamiento es extenso, se requiere seguimiento adicional.");
         }
     }
-
-    // toString
-    @Override
-    public String toString() {
-        return "Consulta{" +
-                "codigo='" + codigo + '\'' +
-                ", fecha='" + fecha + '\'' +
-                ", diagnostico=" + diagnostico +
-                '}';
-    }
 }
