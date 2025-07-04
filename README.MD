@@ -1,60 +1,71 @@
-# 🩺 Sistema de Consultas y Diagnósticos
-
-Este proyecto implementa un sistema básico de gestión de consultas médicas y sus respectivos diagnósticos, desarrollado en **Java** como práctica de programación orientada a objetos.
+# 🩺 Registro de Consultas y Diagnósticos Veterinarios
 
 ---
 
-## 📌 **Descripción general**
-
-El sistema permite registrar consultas médicas, cada una asociada a un diagnóstico que incluye su descripción y tratamiento. También determina si un tratamiento es extenso (más de 30 caracteres).
-
----
-
-## ⚙️ **Clases principales**
-
-### 🔹 `Diagnostico`
-
-- **Atributos:**
-  - `descripcion` (String)
-  - `tratamiento` (String)
-
-- **Métodos:**
-  - Constructor con parámetros.
-  - `esTratamientoLargo()`: retorna `true` si el tratamiento tiene más de 30 caracteres.
+📄 Descripción
+Este proyecto implementa un sistema básico en Java para registrar consultas veterinarias y sus respectivos diagnósticos. Está diseñado con principios de Programación Orientada a Objetos (POO), permitiendo asociar un diagnóstico a cada consulta y evaluar la longitud del tratamiento recomendado.
 
 ---
 
-### 🔹 `Consulta`
+💻 Clases principales
+1. Consulta.java
+Representa una consulta veterinaria. Contiene:
 
-- **Atributos:**
-  - `codigo` (String)
-  - `fecha` (String)
-  - `diagnostico` (Diagnostico)
+Atributos:
 
-- **Métodos:**
-  - Constructor con parámetros.
-  - `mostrarConsulta()`: imprime los datos de la consulta y el diagnóstico asociado, indicando si el tratamiento es extenso.
+codigo: Código identificador de la consulta.
+
+fecha: Fecha en la que se realizó.
+
+diagnostico: Objeto de tipo Diagnostico asociado a la consulta.
+
+Métodos principales:
+
+mostrarConsulta(): Imprime los datos completos de la consulta, incluyendo su diagnóstico y tratamiento, e indica si el tratamiento es largo.
+
+2. Diagnostico.java
+Representa el diagnóstico de una consulta. Contiene:
+
+Atributos:
+
+descripcion: Descripción breve del diagnóstico.
+
+tratamiento: Recomendación de tratamiento.
+
+Métodos principales:
+
+esTratamientoLargo(): Retorna true si el tratamiento tiene más de 30 caracteres, indicando que requiere seguimiento.
+
+3. Main.java
+Clase de prueba para instanciar objetos Diagnostico y Consulta, mostrando su información en consola. Demuestra:
+
+Creación de un diagnóstico.
+
+Creación de una consulta asociada a dicho diagnóstico.
+
+Ejecución del método mostrarConsulta() para imprimir los detalles.
 
 ---
 
-## 💻 **Ejemplo de uso**
+🚀 Tecnologías utilizadas
+Lenguaje: Java
 
-```java
-public class Main {
-    public static void main(String[] args) {
-        Diagnostico diag = new Diagnostico(
-            "Infección en la piel",
-            "Administrar antibiótico tópico durante 10 días y monitorear reacción."
-        );
+Paradigma: Programación Orientada a Objetos (POO)
 
-        Consulta consulta = new Consulta("C001", "2025-07-01", diag);
+IDE sugerido: IntelliJ IDEA o NetBeans
 
-        consulta.mostrarConsulta();
-    }
-}
 
-Consulta #C001
-Fecha: 2025-07-01
-Diagnóstico: Infección en la piel
-Tratamiento: Administrar antibiótico tópico durante 10 días y monitorear reacción.
-El tratamiento es extenso, se requiere seguimiento adicional.
+
+---
+
+✨ Propósitos académicos
+Este proyecto fue desarrollado para:
+
+Reforzar el uso de clases y objetos.
+
+Aplicar relaciones de composición (Consulta contiene un Diagnostico).
+
+Practicar getters, setters y métodos personalizados.
+
+Implementar condicionales basadas en métodos booleanos.
+
