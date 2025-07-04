@@ -29,14 +29,5 @@ public class Diagnostico {
     public boolean esTratamientoLargo() {
         return tratamiento.length() > 30;
     }
-
-    // toString
-    @Override
-    public String toString() {
-        return "Diagnostico{" +
-                "descripcion='" + descripcion + '\'' +
-                ", tratamiento='" + tratamiento + '\'' +
-                '}';
-    }
 }
 
